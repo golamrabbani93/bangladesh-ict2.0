@@ -1,0 +1,46 @@
+svg {
+	z-index: 3;
+	border-radius: 50%;
+	height: 70px;
+	width: 70px;
+}
+.active {
+	z-index: 3;
+}
+.ham {
+	cursor: pointer;
+	position: fixed;
+	right: 8%;
+
+	-webkit-tap-highlight-color: transparent;
+	transition: transform 400ms;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	.line {
+		fill: none;
+		transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+		stroke: #fff;
+		stroke-width: 5;
+		stroke-linecap: round;
+	}
+}
+.hamRotate.active {
+	transform: rotate(45deg);
+}
+
+.ham1 {
+	.top {
+		stroke-dasharray: 40 139;
+	}
+	.bottom {
+		stroke-dasharray: 40 180;
+	}
+}
+.ham1.active .top {
+	stroke-dashoffset: -98px;
+}
+.ham1.active .bottom {
+	stroke-dashoffset: -138px;
+}

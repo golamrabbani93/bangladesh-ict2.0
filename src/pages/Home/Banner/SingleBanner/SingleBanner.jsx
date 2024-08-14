@@ -13,8 +13,8 @@ const SingleBanner = ({data}) => {
 
 			<div className="banner_opacity absolute top-0 left-0 bg-[rgba(0,0,0,0.7)] h-full w-full"></div>
 
-			<div className="container mx-auto">
-				<div className="absolute top-[35%] left-8">
+			<div className="container mx-auto ">
+				<div className="absolute top-[35%] ml-10">
 					<div className="">
 						<h1 className="text-primary-focus text-4xl md:text-[70px] font-bold  leading-[80px] md:leading-[90px] mt-2 md:mb-4 uppercase">
 							{quote}

@@ -26,7 +26,7 @@ const bannerData = [
 
 const Banner = () => {
 	return (
-		<div>
+		<div className="">
 			<Carousel dotPosition="right">
 				{bannerData.map((item, index) => {
 					return <SingleBanner key={index} data={item} />;
