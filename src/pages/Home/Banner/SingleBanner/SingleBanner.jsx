@@ -3,8 +3,7 @@ import {Button} from 'antd';
 /* eslint-disable react/prop-types */
 const SingleBanner = ({data}) => {
 	const contentStyle = {
-		// margin: -1,
-		height: '95vh',
+		height: '100vh',
 	};
 	const {image, quote, description} = data;
 	return (
@@ -19,8 +18,8 @@ const SingleBanner = ({data}) => {
 						<h1 className="text-primary-focus text-4xl md:text-[70px] font-bold  leading-[80px] md:leading-[90px] mt-2 md:mb-4 uppercase">
 							{quote}
 						</h1>
-						<p className="text-3xl w-[55%] md:mb-5 text-justify">{description}</p>
-						<Button className="bg-primary border-0 hover:!bg-secondary !text-white w-[200px] font-bold uppercase cursor-pointer">
+						<p className="text-2xl w-[55%] md:mb-5 text-justify">{description}</p>
+						<Button className="bg-primary border-0 hover:!bg-secondary !text-white w-[200px] h-[40px] font-bold uppercase cursor-pointer">
 							See Deatails
 						</Button>
 					</div>
