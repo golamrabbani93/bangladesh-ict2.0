@@ -2,15 +2,16 @@
 import './Header.css';
 import logo from '../../assets/images/logo.png';
 import {useState} from 'react';
+import {Button, ConfigProvider, Select, Space, theme} from 'antd';
+
 const Header = () => {
 	const [openHam, setOpenHam] = useState(false);
-	console.log('🚀🚀: Header -> openHam', openHam);
 	return (
 		<div className="container relative mx-auto">
-			<div className="absolute top-10  z-10 ">
+			<div className="absolute top-10 ">
 				<div className="container mx-auto">
 					<div className=" flex ">
-						<div className="flex items-center ml-10">
+						<div className="flex items-center ml-10 z-10">
 							<div>
 								<img src={logo} alt="" />
 							</div>
@@ -22,7 +23,9 @@ const Header = () => {
 						<div>
 							<svg
 								onClick={() => setOpenHam(!openHam)}
-								className={`ham hamRotate ham1  bg-primary 2xl:right-[20%] ${openHam && 'active'}`}
+								className={`ham hamRotate ham1  bg-primary 2xl:right-[10%] ${
+									openHam && 'active'
+								} z-50`}
 								viewBox="0 0 100 100"
 							>
 								<path
@@ -36,6 +39,70 @@ const Header = () => {
 								></path>
 							</svg>
 						</div>
+					</div>
+				</div>
+			</div>
+
+			<div className={`navigation flex ${openHam ? `show` : ''} z-30`} id="home">
+				<div className="left ">
+					<nav className="menu text-start">
+						<ul className="mt-10 ">
+							<li className="block">
+								<a className="!text-primary" to="/">
+									home
+								</a>
+							</li>
+							<li>
+								<a>Institution</a>
+							</li>
+
+							<li>
+								<a>Project</a>
+							</li>
+							<li>
+								<a>Gallery</a>
+							</li>
+							<li>
+								<a>acts</a>
+							</li>
+							<li>
+								<a>E-service</a>
+							</li>
+							<li>
+								<a>Content</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div className=" hidden md:block w-[1px] h-[1000px] bg-white ml-2"></div>
+				<div className="pl-16 flex justify-center ">
+					<div className="mt-10">
+						<h2 className="text-2xl font-bold mb-3">Bangladesh National Port</h2>
+						<ConfigProvider
+							theme={{
+								algorithm: theme.darkAlgorithm,
+							}}
+						>
+							<Space>
+								<Select
+									placeholder=""
+									size="large"
+									style={{width: '200px'}}
+									options={[
+										{value: 'ministry', label: 'মন্ত্রণালয়/বিভাগ'},
+										{value: 'directorate', label: 'অধিদপ্তর বাতায়ন'},
+										{value: 'divisional', label: 'বিভাগীয় বাতায়ন'},
+										{value: 'districal', label: 'জেলা বাতায়ন'},
+										{value: 'upazilaBatayon', label: 'উপজেলা বাতায়ন'},
+										{value: 'unionBatayon', label: 'ইউনিয়ন বাতায়ন'},
+										{value: 'otherOfficeList', label: 'অন্যান্য'},
+									]}
+								/>
+							</Space>
+						</ConfigProvider>
+						<Button className="bg-primary border-0 hover:!bg-secondary !text-white  font-bold uppercase cursor-pointer ml-3 h-[40px] w-[100px]">
+							Go
+						</Button>
 					</div>
 				</div>
 			</div>
